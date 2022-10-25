@@ -1,0 +1,28 @@
+body {
+    font-family: 'Hind', sans-serif;
+    background: #f4f4ec;
+    color: #301781;
+    
+}
+
+.header {
+    background: #71a0a5;
+    color: #eeeeee;
+}
+
+
+.first-color { 
+	background: #eeeeee; 
+}
+	
+.second-color { 
+	background: #acc6aa; 
+}
+
+.third-color { 
+	background: #71a0a5; 
+}
+
+.fourth-color { 
+	background: #77628c; 
+}
