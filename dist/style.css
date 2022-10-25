@@ -1,8 +1,14 @@
 body {
     font-family: 'Hind', sans-serif;
-    background: #f4f4ec;
     color: #301781;
     
+}
+
+.card-header {
+    font:bold;
+    font-size: large;
+    color: #eeeeee;
+    background: #77628c;
 }
 
 .header {
