@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const jest = require('jest');
 const path = require('path');
 const fs = require('fs');
-const template = require('./src/template');
+const template = require('./src/template.js');
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -156,7 +156,10 @@ function createIntern() {
 
 // TODO: Create a function to write HTML file
 function writeHTML() {
-    return fs.writeFile('/dist/team.html', template.generateTemplate(employeesArray));
+    console.log(employeesArray);
+    fs.writeFile('./dist/index.html', template.generateTemplate(employeesArray), (err) =>
+    err ? console.error(err) : console.log('Page created!'));
+
 }
 
 createManager();

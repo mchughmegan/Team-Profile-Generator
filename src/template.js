@@ -15,7 +15,8 @@ function generateManagerCard(data) {
         <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
         <p class="card-text" id="office-number">Office Number: ${data[i].officeNumber}</p>
       </div>
-    </div>`
+    </div>
+    `
       managerCard = managerCard + newManagerCard;
     }
   }
@@ -24,7 +25,7 @@ function generateManagerCard(data) {
 function generateInternCard(data) {
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Intern') {
-      let newInternCard = `<div class="card col-2 m-3" id="intern-card">
+      let newInternCard = `<div class="card col-2 m-3 p-0" id="intern-card">
       <div class="card-header">
         <p>${data[i].name}</p>
         <p><i class="fa-solid fa-graduation-cap"></i> Intern</p>
@@ -34,7 +35,8 @@ function generateInternCard(data) {
         <p class="card-text" id="email">Email:<a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
         <p class="card-text" id="school">School: ${data[i].school}</p>
       </div>
-    </div>`
+    </div>
+    `
       internCard = internCard + newInternCard;
     }
   }
@@ -43,7 +45,8 @@ function generateInternCard(data) {
 function generateEngineerCard(data) {
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Engineer') {
-      let newEngineerCard = `<div class="card-header container-fluid">
+      let newEngineerCard = `<div class="card col-2 m-3 p-0" id="engineer-card">
+      <div class="card-header">
       <p>${data[i].name}</p>
       <p><i class="fa-solid fa-glasses"></i> Engineer</p>
     </div>
@@ -53,16 +56,17 @@ function generateEngineerCard(data) {
       <p class="card-text" id="github">Github:<a href='https://github.com/${data[i].github}'  class="website-url"> ${data[i].github}</a></p>
       <a></a>
     </div>
-  </div>`
+  </div>
+  `
       engineerCard = engineerCard + newEngineerCard;
     }
   }
 }
 
-function generateTemplate() {
-  generateManagerCard;
-  generateInternCard;
-  generateEngineerCard;
+function generateTemplate(data) {
+  generateManagerCard(data);
+  generateInternCard(data);
+  generateEngineerCard(data);
   const start = `<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -83,7 +87,7 @@ function generateTemplate() {
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
           crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="./dist/style.css" />
+        <link rel="stylesheet" href="./style.css" />
         <title>Team Profile</title>
       </head>
       <body>
@@ -113,6 +117,6 @@ function generateTemplate() {
     </html>`;
   // const cardsArray = [managerCard,engineerCard,internCard];
   const template = start + managerCard + engineerCard + internCard + end;
+  return template;
 }
-
-module.exports = generateTemplate;
+module.exports = {generateTemplate};
