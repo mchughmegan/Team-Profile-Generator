@@ -1,10 +1,16 @@
+//makes sure variables for manager, intern, and engineer cards start out as empty
 let managerCard = "";
 let internCard = "";
 let engineerCard = "";
 
+//function to create manager card
+//allows option for additional managers if we would like multipl managers on the team in the future
 function generateManagerCard(data) {
+//for loop allows for additional managers if we would like that option later on
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Manager') {
+//create newManagerCard variable that includes data from inquirer responses, will be a string 
+//that will be added to the other components in the generateTemplate function
       let newManagerCard = `<div class="card col-2 m-3 p-0" id="manager-card">
       <div class="card-header">
         <p>${data[i].name}</p>
@@ -17,14 +23,21 @@ function generateManagerCard(data) {
       </div>
     </div>
     `
+//adds newManagerCard to managerCard variable
+//this will allow for multiple managers if we want that option in the future    
       managerCard = managerCard + newManagerCard;
     }
   }
 }
 
+//function to create intern card
+//allows option for additional interns
 function generateInternCard(data) {
+//for loop allows for additional interns
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Intern') {
+//create newInternCard variable that includes data from inquirer responses, will be a string 
+//that will be added to the other components in the generateTemplate function
       let newInternCard = `<div class="card col-2 m-3 p-0" id="intern-card">
       <div class="card-header">
         <p>${data[i].name}</p>
@@ -37,14 +50,21 @@ function generateInternCard(data) {
       </div>
     </div>
     `
+//adds newInternCard to internCard variable
+//this will allow for multiple interns if we want that option in the future 
       internCard = internCard + newInternCard;
     }
   }
 }
 
+//function to create engineer card
+//allows option for additional engineers
 function generateEngineerCard(data) {
+//for loop allows for additional engineers
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Engineer') {
+//create newEngineerCard variable that includes data from inquirer responses, will be a string 
+//that will be added to the other components in the generateTemplate function
       let newEngineerCard = `<div class="card col-2 m-3 p-0" id="engineer-card">
       <div class="card-header">
       <p>${data[i].name}</p>
@@ -58,15 +78,23 @@ function generateEngineerCard(data) {
     </div>
   </div>
   `
+//adds newEngineerCard to engineerCard variable
+//this will allow for multiple engineers
       engineerCard = engineerCard + newEngineerCard;
     }
   }
 }
 
+//template to generate the string that will go into the index.html
 function generateTemplate(data) {
+//data from inquirer responses that went into the employeesArray in the index.js goes into the
+//generate cards functions
   generateManagerCard(data);
   generateInternCard(data);
   generateEngineerCard(data);
+
+  //variable created that will be the string that is the beginning of the index.html document
+  //this will not change
   const start = `<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -97,6 +125,9 @@ function generateTemplate(data) {
           </div>
         </div>
         <main class="row d-flex justify-content-center">`;
+
+  //variable created that will be the string that will be the end of the index.html document
+  //this will not change
   const end = `</main>
         <script
           src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -115,8 +146,15 @@ function generateTemplate(data) {
         ></script>
       </body>
     </html>`;
-  // const cardsArray = [managerCard,engineerCard,internCard];
+
+  //template variable that will include all of the strings, including those created in the generate
+  //cards functions
+  //this will create one huge string to go in the index.html
   const template = start + managerCard + engineerCard + internCard + end;
+
+  //returns the above template variable
   return template;
 }
+
+//exports generateTemplate
 module.exports = {generateTemplate};
