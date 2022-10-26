@@ -1,4 +1,7 @@
+//requires what we are testing
 const Employee = require("../lib/Employee")
+
+//testing objects
 describe("I am describing the Initialization of the Employee Class", () => {
     it("Should be a typeof 'object' whenever I initialize it", () => {
         const testedElement = new Employee();
@@ -17,6 +20,7 @@ describe("I am describing the Initialization of the Employee Class", () => {
         expect(testedElement.email).toBe("email.com")
     })
 })
+//testing methods
 describe("I am describing the Methods of the Employee Class", () => {
     it("Should return the name property when I invoke getName()", () => {
         const testedElement = new Employee("Megan");

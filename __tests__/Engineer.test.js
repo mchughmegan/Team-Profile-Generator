@@ -1,4 +1,7 @@
+//require what we are testing
 const Engineer = require("../lib/Engineer")
+
+//testing objects specific to this class
 describe("I am describing the Initialization of the Engineer Class", () => {
 it("When I pass the fourth parameter through the Engineer class, it should relate to the github property of the object created", () => {
     const testedElement = new Engineer ("Megan", 12, "email.com", 'fakeuser');
@@ -6,6 +9,7 @@ it("When I pass the fourth parameter through the Engineer class, it should relat
 })
 })
 
+//testing methods specific to this class
 describe("I am describing the Methods of the Engineer Class", () => {
     it("Should return the github property when I invoke getGithub()", () => {
         const testedElement = new Engineer("Megan", 14, "email.com", 'fakeuser');
