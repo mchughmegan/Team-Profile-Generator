@@ -1,19 +1,69 @@
-function generateManagerCard {
+let managerCard = "";
+let internCard = "";
+let engineerCard = "";
 
+function generateManagerCard(data) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].getRole() === 'Manager') {
+      let newManagerCard = `<div class="card col-2 m-3 p-0" id="manager-card">
+      <div class="card-header">
+        <p>${data[i].name}</p>
+        <p><i class="fa-solid fa-mug-hot"></i> Manager</p>
+      </div>
+      <div class="card-body">
+        <p class="card-text" id="id">ID: ${data[i].id}</p>
+        <p class="card-text" id="email">Email: <a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+        <p class="card-text" id="office-number">Office Number: ${data[i].officeNumber}</p>
+      </div>
+    </div>`
+      managerCard = managerCard + newManagerCard;
+    }
+  }
 }
 
-function generateInternCard {
-
+function generateInternCard(data) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].getRole() === 'Intern') {
+      let newInternCard = `<div class="card col-2 m-3" id="intern-card">
+      <div class="card-header">
+        <p>${data[i].name}</p>
+        <p><i class="fa-solid fa-graduation-cap"></i> Intern</p>
+      </div>
+      <div class="card-body">
+        <p class="card-text" id="id">ID: ${data[i].id}</p>
+        <p class="card-text" id="email">Email:<a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+        <p class="card-text" id="school">School: ${data[i].school}</p>
+      </div>
+    </div>`
+      internCard = internCard + newInternCard;
+    }
+  }
 }
 
-function generateEngineer {
-    
+function generateEngineerCard(data) {
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].getRole() === 'Engineer') {
+      let newEngineerCard = `<div class="card-header container-fluid">
+      <p>${data[i].name}</p>
+      <p><i class="fa-solid fa-glasses"></i> Engineer</p>
+    </div>
+    <div class="card-body">
+      <p class="card-text" id="id">ID: ${data[i].id}</p>
+      <p class="card-text" id="email">Email:<a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
+      <p class="card-text" id="github">Github:<a href='https://github.com/${data[i].github}'  class="website-url"> ${data[i].github}</a></p>
+      <a></a>
+    </div>
+  </div>`
+      engineerCard = engineerCard + newEngineerCard;
+    }
+  }
 }
 
-
-
-function generateTemplate(data) {
-    `<!DOCTYPE html>
+function generateTemplate() {
+  generateManagerCard;
+  generateInternCard;
+  generateEngineerCard;
+  const start = `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -42,42 +92,8 @@ function generateTemplate(data) {
             <h1>My Team</h1>
           </div>
         </div>
-        <main class="row d-flex justify-content-center">
-          <div class="card col-2 m-3" id="manager-card">
-            <div class="card-header">
-              <p>Brad</p>
-              <p><i class="fa-solid fa-mug-hot"></i> Manager</p>
-            </div>
-            <div class="card-body">
-              <p class="card-text" id="id">ID:</p>
-              <p class="card-text" id="email">Email:</p>
-              <p class="card-text" id="office-number">Office Number:</p>
-            </div>
-          </div>
-          <div class="card col-2 m-3" id="engineer-card">
-            <div class="card-header container-fluid">
-              <p>Megan</p>
-              <p><i class="fa-solid fa-glasses"></i> Engineer</p>
-            </div>
-            <div class="card-body">
-              <p class="card-text" id="id">ID:</p>
-              <p class="card-text" id="email">Email:</p>
-              <p class="card-text" id="github">Github:<a href="https://github.com/mchughmegan" class="website-url"> username</a></p>
-              <a></a>
-            </div>
-          </div>
-          <div class="card col-2 m-3" id="intern-card">
-            <div class="card-header">
-              <p>Phil</p>
-              <p><i class="fa-solid fa-graduation-cap"></i> Intern</p>
-            </div>
-            <div class="card-body">
-              <p class="card-text" id="id">ID:</p>
-              <p class="card-text" id="email">Email:<a href="mailto: fake@email.com"> fake@email.com</a></p>
-              <p class="card-text" id="school">School:</p>
-            </div>
-          </div>
-        </main>
+        <main class="row d-flex justify-content-center">`;
+  const end = `</main>
         <script
           src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
           integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -95,7 +111,8 @@ function generateTemplate(data) {
         ></script>
       </body>
     </html>`;
-};
+  // const cardsArray = [managerCard,engineerCard,internCard];
+  const template = start + managerCard + engineerCard + internCard + end;
+}
 
-
-module.exports = template;
+module.exports = generateTemplate;

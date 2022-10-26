@@ -11,6 +11,10 @@ body {
     background: #77628c;
 }
 
+.card-header:first-child {
+    border-radius: 0;
+}
+
 .header {
     background: #71a0a5;
     color: #eeeeee;
