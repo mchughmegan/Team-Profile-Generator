@@ -6,11 +6,11 @@ let engineerCard = "";
 //function to create manager card
 //allows option for additional managers if we would like multipl managers on the team in the future
 function generateManagerCard(data) {
-//for loop allows for additional managers if we would like that option later on
+  //for loop allows for additional managers if we would like that option later on
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Manager') {
-//create newManagerCard variable that includes data from inquirer responses, will be a string 
-//that will be added to the other components in the generateTemplate function
+      //create newManagerCard variable that includes data from inquirer responses, will be a string 
+      //that will be added to the other components in the generateTemplate function
       let newManagerCard = `<div class="card col-2 m-3 p-0" id="manager-card">
       <div class="card-header">
         <p>${data[i].name}</p>
@@ -23,8 +23,8 @@ function generateManagerCard(data) {
       </div>
     </div>
     `
-//adds newManagerCard to managerCard variable
-//this will allow for multiple managers if we want that option in the future    
+      //adds newManagerCard to managerCard variable
+      //this will allow for multiple managers if we want that option in the future    
       managerCard = managerCard + newManagerCard;
     }
   }
@@ -33,11 +33,11 @@ function generateManagerCard(data) {
 //function to create intern card
 //allows option for additional interns
 function generateInternCard(data) {
-//for loop allows for additional interns
+  //for loop allows for additional interns
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Intern') {
-//create newInternCard variable that includes data from inquirer responses, will be a string 
-//that will be added to the other components in the generateTemplate function
+      //create newInternCard variable that includes data from inquirer responses, will be a string 
+      //that will be added to the other components in the generateTemplate function
       let newInternCard = `<div class="card col-2 m-3 p-0" id="intern-card">
       <div class="card-header">
         <p>${data[i].name}</p>
@@ -50,8 +50,8 @@ function generateInternCard(data) {
       </div>
     </div>
     `
-//adds newInternCard to internCard variable
-//this will allow for multiple interns if we want that option in the future 
+      //adds newInternCard to internCard variable
+      //this will allow for multiple interns if we want that option in the future 
       internCard = internCard + newInternCard;
     }
   }
@@ -60,11 +60,11 @@ function generateInternCard(data) {
 //function to create engineer card
 //allows option for additional engineers
 function generateEngineerCard(data) {
-//for loop allows for additional engineers
+  //for loop allows for additional engineers
   for (let i = 0; i < data.length; i++) {
     if (data[i].getRole() === 'Engineer') {
-//create newEngineerCard variable that includes data from inquirer responses, will be a string 
-//that will be added to the other components in the generateTemplate function
+      //create newEngineerCard variable that includes data from inquirer responses, will be a string 
+      //that will be added to the other components in the generateTemplate function
       let newEngineerCard = `<div class="card col-2 m-3 p-0" id="engineer-card">
       <div class="card-header">
       <p>${data[i].name}</p>
@@ -73,13 +73,13 @@ function generateEngineerCard(data) {
     <div class="card-body">
       <p class="card-text" id="id">ID: ${data[i].id}</p>
       <p class="card-text" id="email">Email:<a href="mailto: ${data[i].email}"> ${data[i].email}</a></p>
-      <p class="card-text" id="github">Github:<a href='https://github.com/${data[i].github}'  class="website-url"> ${data[i].github}</a></p>
+      <p class="card-text" id="github">GitHub:<a href='https://github.com/${data[i].github}'  class="website-url"> ${data[i].github}</a></p>
       <a></a>
     </div>
   </div>
   `
-//adds newEngineerCard to engineerCard variable
-//this will allow for multiple engineers
+      //adds newEngineerCard to engineerCard variable
+      //this will allow for multiple engineers
       engineerCard = engineerCard + newEngineerCard;
     }
   }
@@ -87,8 +87,8 @@ function generateEngineerCard(data) {
 
 //template to generate the string that will go into the index.html
 function generateTemplate(data) {
-//data from inquirer responses that went into the employeesArray in the index.js goes into the
-//generate cards functions
+  //data from inquirer responses that went into the employeesArray in the index.js goes into the
+  //generate cards functions
   generateManagerCard(data);
   generateInternCard(data);
   generateEngineerCard(data);
@@ -157,4 +157,4 @@ function generateTemplate(data) {
 }
 
 //exports generateTemplate
-module.exports = {generateTemplate};
+module.exports = { generateTemplate };

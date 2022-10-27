@@ -16,10 +16,14 @@ This project uses node.js to create a Team Profile in html. Inquirer prompts the
 
 ## Installation
 
-In VS Code, enter the following in the Integrated Terminal to install the applicable version of inquirer:
+In VS Code, enter the following in the Integrated Terminal to install the applicable versions of jest and inquirer:
 
 ```
 npm i inquirer@8.2.4
+```
+
+```
+npm i jest
 ```
 
 ## Usage
@@ -56,9 +60,8 @@ Photo
 
 ## Credits
 
-Thank you to Mark Gardner for suggesting I generate the HTML as strings added together. His github site can be found here:
-
-Color Palette for the index.html can be found here:
+Color Palette can be found here:
+https://palettes.shecodes.io/palettes/1246
 
 ## Tests
 
