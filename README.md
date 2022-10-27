@@ -28,7 +28,7 @@ npm i jest
 
 ## Usage
 
-To view a video walkthrough of the application, click on this link 
+To view a video walkthrough of the application, click on this link https://drive.google.com/file/d/16lDJizdv51nnjtdr2eP0US9IMDx-VJ7c/view.
 
 In VS Code, the user will need to open their integrated terminal by right clicking on the index.js file. 
 
@@ -64,6 +64,9 @@ When the user sees the newly generated index.html in the web browser, they will 
 
 Color Palette can be found here:
 https://palettes.shecodes.io/palettes/1246
+
+Thank you to Mark Gardner for suggesting to add multiple strings of html in the template.js. His GitHub site can be found here:
+https://github.com/MarkGATX
 
 ## Tests
 
