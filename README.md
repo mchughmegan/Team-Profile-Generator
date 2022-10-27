@@ -32,31 +32,33 @@ To view a video walkthrough of the application, click on this link
 
 In VS Code, the user will need to open their integrated terminal by right clicking on the index.js file. 
 
-Photo
+![Open Terminal](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/Open%20Integrated%20Terminal.png)
 
 In the terminal, they will need to type node index.js then enter. 
 
-Photo
+![Type in Terminal](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/node%20index.js.png)
 
 The user will then be prompted with questions regarding each employee on their team.
 
-Photo
+![Inquirer Questions](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/Inquirer%20questions%20and%20responses.png)
 
-Once the user has answered the last question, the terminal will explain that the index.html is generating.
+The user will be able to add new team members.
 
-Photo
+![Add employee](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/Next%20Employee.png)
 
-The user can now locate their index.html for their Team Profile in the dist folder.
+Once the user indicates that there are no more employees to add, the terminal will explain that there is a new html document.
 
-Photo
+![Choose None](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/No%20more%20employees.png)
 
-When the user right clicks on the newly generated index.html, they will be able to preview it in their web browser by choosing Open in Default Browser.
+![New html](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/html%20created.png)
 
-Photo
+The user can now locate their index.html for their Team Profile in the dist folder. When the user right clicks on the newly generated index.html, they will be able to preview it in their web browser by choosing Open in Default Browser.
+
+![Open in Browser](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/View%20in%20default%20browser.png)
 
 When the user sees the newly generated index.html in the web browser, they will see a page with My Team at the top, and cards with team members and their applicable information in the main section.
 
-Photo
+![View in Browser](https://github.com/mchughmegan/Team-Profile-Generator/blob/main/assets/html%20in%20browser.png)
 
 ## Credits
 
